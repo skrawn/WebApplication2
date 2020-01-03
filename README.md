@@ -2,7 +2,7 @@
 
 ## Generating new OpenAPI Typescript
 
-1. `cd WebApplication1`
+1. `cd WebApplication2`
 2. `yarn`
-3. Open `WebApplication1.sln` in Visual Studio and start the API.
+3. Open `WebApplication2.sln` in Visual Studio and start the API.
 4. `yarn run regen_api`
