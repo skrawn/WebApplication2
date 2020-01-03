@@ -1,0 +1,52 @@
+{
+  "swagger": "2.0",
+  "info": { "version": "1.0", "title": "Weather Forecast" },
+  "paths": {
+    "/api/v1/WeatherForecast": {
+      "get": {
+        "tags": ["WeatherForecast"],
+        "operationId": "Get",
+        "consumes": [],
+        "produces": ["text/plain", "application/json", "text/json"],
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "schema": { "uniqueItems": false, "type": "array", "items": { "$ref": "#/definitions/WeatherForecast" } }
+          }
+        }
+      }
+    },
+    "/api/v1/WeatherForecast/complex": {
+      "get": {
+        "tags": ["WeatherForecast"],
+        "operationId": "GetGarbage",
+        "consumes": [],
+        "produces": ["text/plain", "application/json", "text/json"],
+        "parameters": [],
+        "responses": {
+          "200": { "description": "Success", "schema": { "$ref": "#/definitions/ControllerResponse[ComplexResponse]" } }
+        }
+      }
+    }
+  },
+  "definitions": {
+    "WeatherForecast": {
+      "type": "object",
+      "properties": {
+        "date": { "format": "date-time", "type": "string" },
+        "temperatureC": { "format": "int32", "type": "integer" },
+        "temperatureF": { "format": "int32", "type": "integer", "readOnly": true },
+        "summary": { "type": "string" }
+      }
+    },
+    "ControllerResponse[ComplexResponse]": {
+      "type": "object",
+      "properties": { "data": { "$ref": "#/definitions/ComplexResponse" }, "error": { "type": "string" } }
+    },
+    "ComplexResponse": {
+      "type": "object",
+      "properties": { "id": { "format": "uuid", "type": "string" }, "garbage": { "type": "string" } }
+    }
+  }
+}

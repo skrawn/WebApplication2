@@ -1,0 +1,1 @@
+openapi-generator generate -i http://localhost:5000/swagger/v1/swagger.json --skip-validate-spec --generator-name typescript-fetch -o .

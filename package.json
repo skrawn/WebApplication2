@@ -1,0 +1,12 @@
+{
+  "name": "WebApplication2",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "regen_api": "./regen_api.sh"
+  },
+  "devDependencies": {
+    "@openapitools/openapi-generator-cli": "^1.0.1-4.1.3"
+  }
+}
